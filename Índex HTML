@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Pessoal de Eugenio Nunes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+        header {
+            background-color: #ff6f61;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #ff9f80;
+            padding: 10px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .container {
+            padding: 20px;
+        }
+        .blog-post {
+            background-color: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .comment-section {
+            background-color: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .comment {
+            margin-bottom: 15px;
+        }
+        footer {
+            background-color: #ff6f61;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao Site de Eugenio Nunes</h1>
+    </header>
+    <nav>
+        <a href="#sobre">Sobre Mim</a>
+        <a href="#blog">Blog</a>
+        <a href="#opiniao">Opiniões</a>
+    </nav>
+    <div class="container" id="sobre">
+        <h2>Sobre Mim</h2>
+        <p>Olá! Meu nome é Eugenio Nunes. Sou brasileiro, nascido em 24 de maio de 1989. Trabalho com açaí e adoro praticar esportes. Aqui você encontrará mais sobre minhas atividades, pensamentos e paixões.</p>
+    </div>
+    <div class="container" id="blog">
+        <h2>Blog</h2>
+        <div class="blog-post">
+            <h3>Primeiro Post</h3>
+            <p>Bem-vindos ao meu blog! Aqui vou compartilhar minhas experiências e conhecimentos. Fique à vontade para explorar e deixar suas opiniões.</p>
+        </div>
+        <!-- Adicione mais posts conforme necessário -->
+    </div>
+    <div class="container comment-section" id="opiniao">
+        <h2>Deixe sua Opinião</h2>
+        <form id="commentForm">
+            <textarea id="commentInput" rows="4" cols="50" placeholder="Deixe seu comentário aqui..."></textarea><br>
+            <button type="button" onclick="addComment()">Enviar</button>
+        </form>
+        <div id="comments">
+            <!-- Comentários serão adicionados aqui -->
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Eugenio Nunes. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        function addComment() {
+            var commentInput = document.getElementById('commentInput');
+            var commentText = commentInput.value;
+            if (commentText.trim() !== "") {
+                var commentSection = document.getElementById('comments');
+                var newComment = document.createElement('div');
+                newComment.className = 'comment';
+                newComment.textContent = commentText;
+                commentSection.appendChild(newComment);
+                commentInput.value = '';
+            }
+        }
+    </script>
+</body>
+</html>
